@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <title>Recidencia Del Hamor Beach Front</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+    
+    </style>
+</head>
+<body class="bg-gray-50">
+
+<!-- Navbar -->
+<nav class="bg-transparent fixed w-full top-0 left-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="text-xl font-bold text-white">Recidencia Del Hamor</a>
+
+      <!-- Desktop Menu -->
+      <div id="menu" class="md:flex hidden space-x-4 md:space-x-8 text-lg">
+          <a href="index.html" class="text-white hover:text-gray-300 transition">Home</a>
+          <a href="Aboutus.html" class="text-white hover:text-gray-300 transition">About Us</a>
+          <a href="accommodation.html" class="text-white hover:text-gray-300 transition">Accommodation</a>
+          <a href="Amenities.html" class="text-white hover:text-gray-300 transition">Amenities</a>
+          <a href="Contactus.html" class="text-white hover:text-gray-300 transition">Contact Us</a>
+          <a href="Location.html" class="text-white hover:text-gray-300 transition">Location</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-[#50311f] focus:outline-none text-2xl">
+        ☰
+    </button>
+    
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="absolute top-full left-0 w-full hidden flex flex-col items-start py-4 text-lg space-y-2 bg-white shadow-lg">
+      <a href="index.html" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Home</a>
+      <a href="Aboutus.html" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">About Us</a>
+      <a href="accommodation.html" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Accommodation</a>
+      <a href="Amenities.html" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Amenities</a>
+      <a href="Contactus.html" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Contact Us</a>
+      <a href="Location.html" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Location</a>
+  </div>
+</nav>
+
+
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const desktopMenu = document.getElementById("menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const links = mobileMenu.querySelectorAll("a");
+    let hideTimeout;
+  
+    function updateMenuDisplay() {
+        if (window.innerWidth > 768) {
+            desktopMenu.classList.remove("hidden");
+            mobileMenu.classList.add("hidden");
+            menuBtn.classList.add("hidden");
+        } else {
+            desktopMenu.classList.add("hidden");
+            menuBtn.classList.remove("hidden");
+        }
+    }
+  
+    function showMobileMenu() {
+        mobileMenu.classList.toggle("hidden");
+        resetHideTimeout();
+    }
+  
+    function resetHideTimeout() {
+        clearTimeout(hideTimeout);
+        if (!mobileMenu.classList.contains("hidden")) {
+            hideTimeout = setTimeout(() => {
+                mobileMenu.classList.add("hidden");
+            }, 3000);
+        }
+    }
+  
+    menuBtn.addEventListener("click", showMobileMenu);
+    mobileMenu.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+    mobileMenu.addEventListener("mouseleave", resetHideTimeout);
+  
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            links.forEach(l => l.classList.remove("bg-gray-300"));
+            link.classList.add("bg-gray-300");
+            mobileMenu.classList.add("hidden");
+        });
+    });
+  
+    window.addEventListener("resize", updateMenuDisplay);
+    document.addEventListener("DOMContentLoaded", updateMenuDisplay);
+  </script>
+
+
+<section  class="relative w-full h-screen">
+    <video autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover">
+      <source src="assets/vid123.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+
+    <!-- Centered Content -->
+    <div class="relative z-10 flex items-center justify-center w-full h-full px-12 text-center">
+        <div class="max-w-3xl text-white">
+            <h1 class="text-6xl font-extrabold leading-tight mb-6">About Us</h1>
+            <p class="text-2xl font-light leading-relaxed">
+                Experience the perfect blend of luxury and comfort. At Recidencia Del Hamor, 
+                we offer a serene escape nestled in the heart of Casiguran, Sorsogon. 
+                Every moment here is a celebration of elegance and tranquility.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-white text-[#50311f] flex flex-col justify-between min-h-screen px-4">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12 drop-shadow-lg text-[#50311f]">Who We Are</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div class="bg-white text-[#50311f] rounded-3xl shadow-lg p-6 sm:p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="assets/front.jpg" alt="Pool" class="w-full rounded-2xl mb-4 sm:mb-6 object-cover">
+        <h3 class="text-2xl sm:text-3xl font-semibold mb-4">History</h3>
+        <p class="text-lg">Recidencia Del Hamor in Casiguran, Sorsogon is a serene retreat that blends luxury and nature. Inspired by the local word "Hamor", meaning love and kindness, it offers a peaceful escape where elegance meets heartfelt hospitality. Each stay is a reflection of Casiguran’s charm — a place where every guest becomes part of its story.  </p>
+      </div>
+
+      <div class="bg-white text-[#50311f] rounded-3xl shadow-lg p-6 sm:p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="assets/dining.png" alt="Dining" class="w-full rounded-2xl mb-4 sm:mb-6 object-cover">
+        <h3 class="text-2xl sm:text-3xl font-semibold mb-4">Our Commitment to Serve</h3>
+        <p class="text-lg">At Recidencia Del Hamor, we are dedicated to providing exceptional hospitality rooted in warmth, comfort, and care. Our mission is to create a serene haven where every guest feels valued — ensuring each stay is as memorable as the landscapes that surround us.</p>
+      </div>
+      
+      <div class="bg-white text-[#50311f] rounded-3xl shadow-lg p-6 sm:p-8 transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="assets/pro1.jfif" alt="view" class="w-full rounded-2xl mb-4 sm:mb-6 object-cover">
+        <h3 class="text-2xl sm:text-3xl font-semibold mb-4">Policies and Procedures</h3>
+        <p class="text-lg">At Recidencia Del Hamor, we aim to provide a seamless and relaxing experience for all our guests. Cancellations must be made at least 48 hours prior to arrival. We accept cash, credit cards, and online transfers for payments. Smoking is only allowed in designated areas, and pets are not permitted, except for service animals. For any inquiries, please don’t hesitate to contact us — your comfort is our priority.</p>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-16 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl sm:text-6xl font-bold text-center text-[#50311f] mb-8 sm:mb-12">Our Beautiful Gallery</h1>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="assets/serve1.jfif" alt="Image 1" class="w-full h-48 object-cover">
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-[#50311f] mb-2">Service Care</h3>
+                  <p class="text-gray-600">"At Recidencia Del Hamor, we are dedicated to providing exceptional service..."</p>
+              </div>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="assets/river.jfif" alt="Image 2" class="w-full h-48 object-cover">
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-[#50311f] mb-2">Riverside</h3>
+                  <p class="text-gray-600">"Experience the serene charm of our riverside retreat..."</p>
+              </div>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+              <img src="assets/people.jpg" alt="Image 3" class="w-full h-48 object-cover">
+              <div class="p-6">
+                  <h3 class="text-xl font-semibold text-[#50311f] mb-2">Happiness</h3>
+                  <p class="text-gray-600">"Our greatest joy comes from seeing happy smiles and satisfied hearts..."</p>
+              </div>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src="assets/ride.jpg" alt="Image 3" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold text-[#50311f] mb-2">Rides</h3>
+                <p class="text-gray-600">Experience more than just relaxation—our hotel offers thrilling rides and outdoor adventures to make your stay unforgettable!"</p>
+            </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/team.jpg" alt="Image 3" class="w-full h-48 object-cover">
+          <div class="p-6">
+              <h3 class="text-xl font-semibold text-[#50311f] mb-2">Our Team</h3>
+              <p class="text-gray-600">At Recidencia Del Hamor, our passionate and professional team is committed to making your stay truly exceptional. With warm hospitality and attention to detail, we ensure every guest enjoys a seamless and unforgettable experience.</p>
+          </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <img src="assets/hays.jpg" alt="Image 3" class="w-full h-48 object-cover">
+        <div class="p-6">
+            <h3 class="text-xl font-semibold text-[#50311f] mb-2">Views</h3>
+            <p class="text-gray-600">Wake up to stunning landscapes and immerse yourself in the natural beauty surrounding Recidencia Del Hamor. Whether you seek serene ocean horizons, lush greenery, or mesmerizing sunsets, every moment is a picture-perfect experience.</p>
+        </div>
+    </div>
+      </div>
+  </div>
+</section>
+
+<footer class="bg-[#50311f] text-white py-12">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Column 1: Contact Info -->
+      <div>
+          <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+          <ul>
+              <li class="mb-2">Email: contact@yourdomain.com</li>
+              <li class="mb-2">Phone: +1 (123) 456-7890</li>
+              <li class="mb-2">Address: 123 Serenity Blvd, Luxury City, State</li>
+          </ul>
+      </div>
+
+      <!-- Column 2: Social Media Links -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Follow Us</h3>
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+          <i class="fab fa-facebook"></i> 
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+          <i class="fab fa-twitter"></i> 
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+          <i class="fab fa-instagram"></i> 
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin"></i> 
+        </a>
+      </div>
+      
+      <style>
+        .social-icon i {
+          font-size: 2.5rem; /* Increase icon size */
+          margin-right: 15px; /* Add space between icons */
+        }
+      
+        .social-icon {
+          margin-right: 20px; /* Optional, for overall spacing between icons */
+        }
+      </style>
+      
+
+      <!-- Column 3: About Us -->
+      <div>
+          <h3 class="text-2xl font-semibold mb-4">About Us</h3>
+          <p>
+              We are dedicated to providing the finest service in a serene and luxurious environment. Our space is designed to offer a peaceful retreat with top-tier amenities and unmatched comfort.  
+          </p>
+      </div>
+  </div>
+
+  <div class="mt-8 text-center text-sm">
+      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+  </div>
+</footer>
+       
+        
+        
+        
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+      });
+    });
+  </script>
+</html>

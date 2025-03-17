@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+
+    <title>Recidencia Del Hamor Beach Front</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 ">
+
+ <!-- Navbar -->
+<nav class="bg-transparent fixed w-full top-0 left-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="text-xl font-bold text-brown-700">Recidencia Del Hamor</a>
+
+      <!-- Desktop Menu -->
+      <div id="menu" class="md:flex hidden space-x-4 md:space-x-8 text-lg">
+          <a href="index.html" class="text-brown-700 hover:text-gray-500 transition">Home</a>
+          <a href="Aboutus.html" class="text-brown-700 hover:text-gray-500 transition">About Us</a>
+          <a href="accommodation.html" class="text-brown-700 hover:text-gray-500 transition">Accommodation</a>
+          <a href="Amenities.html" class="text-brown-700 hover:text-gray-500 transition">Amenities</a>
+          <a href="Contactus.html" class="text-brown-700 hover:text-gray-500 transition">Contact Us</a>
+          <a href="Location.html" class="text-brown-700 hover:text-gray-500 transition">Location</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-brown-700 focus:outline-none text-2xl">
+          ☰
+      </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="absolute top-full left-0 w-full hidden flex flex-col items-start py-4 text-lg space-y-2 bg-white shadow-lg">
+      <a href="index.html" class="text-brown-700 hover:bg-gray-200 transition block py-2 px-4 w-full">Home</a>
+      <a href="Aboutus.html" class="text-brown-700 hover:bg-gray-200 transition block py-2 px-4 w-full">About Us</a>
+      <a href="accommodation.html" class="text-brown-700 hover:bg-gray-200 transition block py-2 px-4 w-full">Accommodation</a>
+      <a href="Amenities.html" class="text-brown-700 hover:bg-gray-200 transition block py-2 px-4 w-full">Amenities</a>
+      <a href="Contactus.html" class="text-brown-700 hover:bg-gray-200 transition block py-2 px-4 w-full">Contact Us</a>
+      <a href="Location.html" class="text-brown-700 hover:bg-gray-200 transition block py-2 px-4 w-full">Location</a>
+  </div>
+</nav>
+
+
+
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const desktopMenu = document.getElementById("menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const links = mobileMenu.querySelectorAll("a");
+    let hideTimeout;
+  
+    function updateMenuDisplay() {
+        if (window.innerWidth > 768) {
+            desktopMenu.classList.remove("hidden");
+            mobileMenu.classList.add("hidden");
+            menuBtn.classList.add("hidden");
+        } else {
+            desktopMenu.classList.add("hidden");
+            menuBtn.classList.remove("hidden");
+        }
+    }
+  
+    function showMobileMenu() {
+        mobileMenu.classList.toggle("hidden");
+        resetHideTimeout();
+    }
+  
+    function resetHideTimeout() {
+        clearTimeout(hideTimeout);
+        if (!mobileMenu.classList.contains("hidden")) {
+            hideTimeout = setTimeout(() => {
+                mobileMenu.classList.add("hidden");
+            }, 3000);
+        }
+    }
+  
+    menuBtn.addEventListener("click", showMobileMenu);
+    mobileMenu.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+    mobileMenu.addEventListener("mouseleave", resetHideTimeout);
+  
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            links.forEach(l => l.classList.remove("bg-gray-300"));
+            link.classList.add("bg-gray-300");
+            mobileMenu.classList.add("hidden");
+        });
+    });
+  
+    window.addEventListener("resize", updateMenuDisplay);
+    document.addEventListener("DOMContentLoaded", updateMenuDisplay);
+  </script>
+    
+  <!-- What's New Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-8 text-[#50311f]">Family Bundles</h2>
+
+    <div class="relative flex items-center justify-between">
+      <!-- Navigation Arrows (Outside) -->
+      <button id="prevBtn" class="bg-[#50311f] text-white p-3 rounded-full">
+        ◄
+      </button>
+
+      <!-- Carousel Container -->
+      <div id="carousel" class="flex gap-6 overflow-x-hidden scroll-smooth max-w-[90%] mx-auto">
+        <!-- Slide 1 -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/fam1.jfif" alt="Payday Flash Sale" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Luxury Family Room 1</h3>
+            <p class="text-gray-600">Family Rooms price drop from ₱10,000 to ₱9,000! Book now!</p>
+            <p class="text-green-600 font-bold">Available</p>
+
+            <!-- Features Section -->
+            <ul class="text-gray-600 mb-4">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Garden View</li>
+              <li>Room Service Available</li>
+            </ul>
+
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+              Book Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/fam2.webp" alt="PAL Seat Sale" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Luxury Family Room 2</h3>
+            <p class="text-gray-600">From ₱9,000 to just ₱8,000! Reserve your spot today!</p>
+            <p class="text-red-600 font-bold">Fully Booked</p>
+
+            <!-- Features Section -->
+            <ul class="text-gray-600 mb-4">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Mountain View</li>
+              <li>24/7 Concierge Service</li>
+            </ul>
+
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out" disabled>
+              Book Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/fam3.jpg" alt="Metrobank Promo" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Luxury Family Room 3</h3>
+            <p class="text-gray-600">Enjoy ₱2,000 OFF from ₱9,000 to ₱7,000! Book now!</p>
+            <p class="text-green-600 font-bold">Available</p>
+
+            <!-- Features Section -->
+            <ul class="text-gray-600 mb-4">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Sea View</li>
+              <li>Complimentary Breakfast</li>
+            </ul>
+
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+              Book Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Additional slides -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/fam4.jfif" alt="Metrobank Promo" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Luxury Family Room 4</h3>
+            <p class="text-gray-600">Save ₱1,500,000 — now only ₱7,500 from ₱9,000!</p>
+            <p class="text-red-600 font-bold">Fully Booked</p>
+
+            <!-- Features Section -->
+            <ul class="text-gray-600 mb-4">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Ocean View</li>
+              <li>Private Pool Access</li>
+            </ul>
+
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out" disabled>
+              Book Now
+            </button>
+          </div>
+        </div>
+
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/fam5.jfif" alt="Metrobank Promo" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Luxury Family Room 5</h3>
+            <p class="text-gray-600">Get ₱2,000 OFF — down from ₱9,000 to just ₱7,000!</p>
+            <p class="text-green-600 font-bold">Available</p>
+
+            <!-- Features Section -->
+            <ul class="text-gray-600 mb-4">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>City View</li>
+              <li>Free Parking</li>
+            </ul>
+
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows (Outside) -->
+      <button id="nextBtn" class="bg-[#50311f] text-white p-3 rounded-full">
+        ►
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+   <!-- Product Section -->
+<section class="py-12 bg-gray-100">
+  <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+          <!-- Deluxe Room -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col">
+              <img src="assets/pic1.jpg" alt="Deluxe Room" class="w-full h-64 object-cover">
+              <div class="p-6 flex flex-col justify-between flex-grow">
+                  <h4 class="text-2xl font-bold text-[#50311f] mb-2">Deluxe Room</h4>
+                  <p class="text-gray-600 mb-4">Spacious and stylish room with a queen-size bed and garden view.</p>
+                  
+                  <!-- Features Section -->
+                  <ul class="text-gray-600 mb-4">
+                      <li>Free WiFi</li>
+                      <li>Bathtub</li>
+                      <li>Garden View</li>
+                      <li>Room Service Available</li>
+                  </ul>
+                  
+                  <div class="flex justify-between items-center mt-auto">
+                      <p class="text-xl font-semibold text-[#A66E38]">₱9,000 / night</p>
+                      <button class="book-now-btn px-8 py-2 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+                          Book Now
+                      </button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Private Patio -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 flex flex-col">
+              <img src="assets/pic3.jfif" alt="Private Patio" class="w-full h-64 object-cover">
+              <div class="p-6 flex flex-col justify-between flex-grow">
+                  <h4 class="text-2xl font-bold text-[#50311f] mb-2">Private Patio</h4>
+                  <p class="text-gray-600 mb-4">Relax in your private patio with breathtaking views and cozy seating.</p>
+                  
+                  <!-- Features Section -->
+                  <ul class="text-gray-600 mb-4">
+                      <li>Free WiFi</li>
+                      <li>Bathtub</li>
+                      <li>Private Patio</li>
+                      <li>Outdoor Seating</li>
+                  </ul>
+                  
+                  <div class="flex justify-between items-center mt-auto">
+                      <p class="text-xl font-semibold text-[#A66E38]">₱9,000 / night</p>
+                      <button class="book-now-btn px-8 py-2 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+                          Book Now
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br>
+</section>
+
+
+
+  
+<!-- Couple Deals Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-8 text-[#50311f]">Couple Deals</h2>
+
+    <div class="relative flex items-center justify-between">
+      <!-- Navigation Arrows (Outside) -->
+      <button id="prevCoupleBtn" class="bg-[#50311f] text-white p-3 rounded-full">
+        ◄
+      </button>
+    
+      <!-- Carousel Container -->
+      <div id="coupleCarousel" class="flex gap-6 overflow-x-hidden scroll-smooth max-w-[90%] mx-auto">
+        <!-- Slide 1 -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/dis1.jfif" alt="Couple Retreat" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Romantic Getaway 1</h3>
+            <p class="text-gray-600">Exclusive deal: From ₱8,000 to ₱7,000! Book now!</p>
+            <p class="text-green-600 font-semibold">Availability: Available</p><br>
+    
+            <!-- Features Section -->
+            <ul class="text-gray-600">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Private Balcony</li>
+            </ul>
+            <br>
+    
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+              Book Now
+            </button>
+          </div>
+        </div>
+    
+        <!-- Slide 2 -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/dis2.jfif" alt="Romantic Escape" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Romantic Getaway 2</h3>
+            <p class="text-gray-600">Limited-time offer: ₱1,500 OFF, now ₱6,500!</p>
+            <p class="text-red-600 font-semibold">Availability: Sold Out</p><br>
+    
+            <!-- Features Section -->
+            <ul class="text-gray-600">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Luxury Spa</li>
+            </ul>
+            <br>
+    
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out" disabled>
+              Book Now
+            </button>
+          </div>
+        </div>
+    
+        <!-- Slide 3 -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/dis3.jpg" alt="Sunset Romance" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Romantic Getaway 3</h3>
+            <p class="text-gray-600">Enjoy ₱2,000 OFF, now just ₱6,000! Limited slots!</p>
+            <p class="text-green-600 font-semibold">Availability: Available</p><br>
+    
+            <!-- Features Section -->
+            <ul class="text-gray-600">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Private Pool</li>
+            </ul>
+            <br>
+    
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+              Book Now
+            </button>
+          </div>
+        </div>
+    
+        <!-- Slide 4 -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/dis4.jpg" alt="Beachfront Retreat" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Romantic Getaway 4</h3>
+            <p class="text-gray-600">Special deal: From ₱7,500 down to ₱6,500!</p>
+            <p class="text-green-600 font-semibold">Availability: Available</p><br>
+    
+            <!-- Features Section -->
+            <ul class="text-gray-600">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Luxury Spa</li>
+            </ul>
+            <br>
+    
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+              Book Now
+            </button>
+          </div>
+        </div>
+    
+        <!-- Slide 5 -->
+        <div class="min-w-[300px] bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="assets/dis5.jpg" alt="Luxury Couple Stay" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-[#50311f] mb-2">Romantic Getaway 5</h3>
+            <p class="text-gray-600">Limited slots: Save ₱1,500, now just ₱6,500!</p>
+            <p class="text-red-600 font-semibold">Availability: Few Slots Left</p><br>
+    
+            <!-- Features Section -->
+            <ul class="text-gray-600">
+              <li>Free WiFi</li>
+              <li>Bathtub</li>
+              <li>Luxury Spa</li>
+            </ul>
+            <br>
+    
+            <button class="book-now-btn px-2 py-1 text-white text-lg font-semibold rounded-full border-2 border-[#50311f] bg-[#50311f] hover:bg-white hover:text-[#50311f] transition-all duration-300 ease-in-out">
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Navigation Arrows (Outside) -->
+      <button id="nextCoupleBtn" class="bg-[#50311f] text-white p-3 rounded-full">
+        ►
+      </button>
+    </div>
+  </section>    
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const carousel = document.getElementById("coupleCarousel");
+      const prevBtn = document.getElementById("prevCoupleBtn");
+      const nextBtn = document.getElementById("nextCoupleBtn");
+      const scrollAmount = 320; // Adjust as needed
+
+      prevBtn.addEventListener("click", () => {
+          carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+
+      nextBtn.addEventListener("click", () => {
+          carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+  });
+</script>
+
+
+  
+    
+
+    <!-- Booking Modal -->
+<div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden p-4" style="background: url('assets/modal-bg.jpg') center/cover no-repeat;">
+    <div class="bg-white bg-opacity-95 border border-gold rounded-3xl p-5 w-full max-w-md shadow-2xl relative">
+        <h2 class="text-2xl font-bold text-gold mb-4 text-center">Book Now</h2>
+
+        <form id="bookingForm" class="space-y-3">
+            <div class="flex flex-col">
+                <label for="fullName" class="text-base font-medium text-gold mb-1">Full Name</label>
+                <div class="flex items-center border border-gold rounded-lg p-2 bg-gray-100">
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name" class="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 text-sm">
+                    <span class="text-gray-500 text-base">👤</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="email" class="text-base font-medium text-gold mb-1">Email</label>
+                <div class="flex items-center border border-gold rounded-lg p-2 bg-gray-100">
+                    <input type="email" id="email" name="email" required placeholder="Enter your email" class="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 text-sm">
+                    <span class="text-gray-500 text-base">📧</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="contactNumber" class="text-base font-medium text-gold mb-1">Contact Number</label>
+                <div class="flex items-center border border-gold rounded-lg p-2 bg-gray-100">
+                    <input type="tel" id="contactNumber" name="contactNumber" required placeholder="Enter your contact number" class="flex-grow bg-transparent outline-none text-gray-700 placeholder-gray-400 text-sm">
+                    <span class="text-gray-500 text-base">📞</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="bookingDate" class="text-base font-medium text-gold mb-1">Booking Date</label>
+                <div class="flex items-center border border-gold rounded-lg p-2 bg-gray-100">
+                    <input type="date" id="bookingDate" name="bookingDate" required class="flex-grow bg-transparent outline-none text-gray-700 text-sm">
+                    <span class="text-gray-500 text-base">📅</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="checkOutDate" class="text-base font-medium text-gold mb-1">Date of Check-Out</label>
+                <div class="flex items-center border border-gold rounded-lg p-2 bg-gray-100">
+                    <input type="date" id="checkOutDate" name="checkOutDate" required class="flex-grow bg-transparent outline-none text-gray-700 text-sm">
+                    <span class="text-gray-500 text-base">📅</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="paymentOption" class="text-base font-medium text-gold mb-1">Payment Option</label>
+                <div class="border border-gold rounded-lg p-2 bg-gray-100">
+                    <select id="paymentOption" name="paymentOption" required class="w-full bg-transparent outline-none text-gray-700 text-sm">
+                        <option value="BPI">BPI</option>
+                        <option value="BDO">BDO</option>
+                        <option value="GCASH">GCASH</option>
+                        <option value="VISA">VISA CARD</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-green-500 text-white text-sm font-medium py-2 rounded-lg hover:bg-green-600 transition">Confirm Booking</button>
+        </form>
+
+        <button id="closeModal" class="mt-3 w-full bg-red-500 text-white text-sm font-medium py-2 rounded-lg hover:bg-red-600 transition">Cancel</button>
+    </div>
+</div>
+
+
+<div class="mt-12 text-center text-[#FFF2D7] bg-[#50311f] py-4 text-sm">
+  &copy; 2025 Recidencia Del Hamor. All rights reserved.
+</div>
+
+
+<script>
+    document.querySelectorAll('.book-now-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('scale-100');
+        });
+    });
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+        const modal = document.getElementById('bookingModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('scale-100');
+    });
+
+    document.getElementById('bookingForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Booking Confirmed!');
+        document.getElementById('bookingModal').classList.add('hidden');
+    });
+
+
+
+    const carousel = document.getElementById('carousel');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: 350, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -350, behavior: 'smooth' });
+  });
+        
+  </script>
+
+<footer class="bg-[#50311f] text-white py-12">
+  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Column 1: Contact Info -->
+      <div>
+          <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+          <ul>
+              <li class="mb-2">Email: contact@yourdomain.com</li>
+              <li class="mb-2">Phone: +1 (123) 456-7890</li>
+              <li class="mb-2">Address: 123 Serenity Blvd, Luxury City, State</li>
+          </ul>
+      </div>
+
+      <!-- Column 2: Social Media Links -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Follow Us</h3>
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+          <i class="fab fa-facebook"></i> 
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon">
+          <i class="fab fa-twitter"></i> 
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon">
+          <i class="fab fa-instagram"></i> 
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin"></i> 
+        </a>
+      </div>
+      
+      <style>
+        .social-icon i {
+          font-size: 2.5rem; /* Increase icon size */
+          margin-right: 15px; /* Add space between icons */
+        }
+      
+        .social-icon {
+          margin-right: 20px; /* Optional, for overall spacing between icons */
+        }
+      </style>
+      
+
+      <!-- Column 3: About Us -->
+      <div>
+          <h3 class="text-2xl font-semibold mb-4">About Us</h3>
+          <p>
+              We are dedicated to providing the finest service in a serene and luxurious environment. Our space is designed to offer a peaceful retreat with top-tier amenities and unmatched comfort.  
+          </p>
+      </div>
+  </div>
+
+  <div class="mt-8 text-center text-sm">
+      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>

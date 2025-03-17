@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+    <title>Recidencia Del Hamor Beach Front</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+ <!-- Navbar -->
+<nav class="bg-transparent fixed w-full top-0 left-0 z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="text-xl font-bold text-white">Recidencia Del Hamor</a>
+
+      <!-- Desktop Menu -->
+      <div id="menu" class="md:flex hidden space-x-4 md:space-x-8 text-lg">
+          <a href="#home" class="text-white hover:text-gray-300 transition">Home</a>
+          <a href="Aboutus.html" class="text-white hover:text-gray-300 transition">About Us</a>
+          <a href="#Accommodation" class="text-white hover:text-gray-300 transition">Accommodation</a>
+          <a href="#Amenities" class="text-white hover:text-gray-300 transition">Amenities</a>
+          <a href="Contactus.html" class="text-white hover:text-gray-300 transition">Contact Us</a>
+          <a href="#Location" class="text-white hover:text-gray-300 transition">Location</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-[#50311f] focus:outline-none text-2xl">
+        ☰
+    </button>
+    
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="absolute top-full left-0 w-full hidden flex flex-col items-start py-4 text-lg space-y-2 bg-white shadow-lg">
+      <a href="#home" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Home</a>
+      <a href="Aboutus.html" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">About Us</a>
+      <a href="#Accommodation" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Accommodation</a>
+      <a href="#Amenities" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Amenities</a>
+      <a href="Contactus.html" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Contact Us</a>
+      <a href="#Location" class="text-black hover:bg-gray-200 transition block py-2 px-4 w-full">Location</a>
+  </div>
+</nav>
+
+
+    <section id="Home" class="relative w-full h-screen">
+        <video autoplay loop muted class="absolute top-0 left- w-full h-full object-cover">
+          <source src="assets/vid123.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="relative z-10 flex items-center justify-start w-full h-full px-12">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-6xl font-extrabold leading-tight mb-4">Recidencia Del Hamor</h1>
+                <p class="text-2xl mb-6">"Welcome to Recidencia del Hamor — where every sunrise brings serenity, every sunset ignites romance, and every moment is a celebration of love and luxury.</p><br>
+                <a href="accommodation.html" class="px-8 py-2 text-white text-lg font-semibold rounded-full border-1 border-white hover:bg-white hover:text-[#654321] transition-all duration-300 ease-in-out">
+                    Book Now
+                  </a>
+                  
+                  
+                  
+            </div>
+        </div>
+    
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+    </section>
+
+  
+   <!-- Accommodation Section -->
+<section id="Accommodation" class="relative flex flex-col md:flex-row items-center justify-between py-16 px-6 w-full rounded-none shadow-none overflow-hidden">
+  <!-- Gradient Background and Text -->
+  <div class="absolute inset-0 bg-gradient-to-r from-[#D4ECDD] to-transparent"></div>
+
+  <div class="relative z-10 max-w-lg text-center md:text-left mb-8 md:mb-0 md:pl-16">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[#654321] leading-tight">
+      Accommodations
+    </h2>
+    <p class="text-base md:text-lg text-[#50311f] mb-8 font-medium" style="font-family: 'Playfair Display', serif;">
+      Escape to a world of elegance and comfort at Recidencia del Hamor. Our thoughtfully designed rooms offer a seamless blend of luxury and serenity, each space crafted to provide breathtaking views, cozy interiors, and modern amenities. Whether you choose a romantic suite or a tranquil garden room, every stay promises a restful retreat and unforgettable moments.
+    </p>
+    <a href="accommodation.html" class="px-6 md:px-8 py-3 text-[#654321] text-lg font-semibold rounded-full border-2 border-[#A66E38] hover:bg-[#A66E38] hover:text-white transition-all duration-300 ease-in-out">
+      Learn More
+    </a>
+  </div>
+
+  <!-- Swiper Slideshow -->
+  <div class="relative z-10 w-full md:w-1/2">
+    <div class="swiper mySwiper rounded-lg shadow-lg">
+      <div class="swiper-wrapper">
+        <!-- Slides with margins and smaller size -->
+        <div class="swiper-slide"><img src="assets/pic1.jpg" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/pic2.jpg" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/pic3.jpg" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+
+            <div class="swiper-slide"><img src="assets/fam1.jfif" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/fam2.webp" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/fam3.jpg" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/fam4.jfif" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/fam5.jfif" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            
+            <div class="swiper-slide"><img src="assets/dis1.jfif" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/dis2.jfif" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/dis3.jpg" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/dis4.jpg" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+            <div class="swiper-slide"><img src="assets/dis5.jpg" alt="" class="w-3/4 mx-auto my-4 rounded-lg"></div>
+          </div>
+      </div>
+      <!-- Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+const menuBtn = document.getElementById("menu-btn");
+const desktopMenu = document.getElementById("menu");
+const mobileMenu = document.getElementById("mobile-menu");
+const links = mobileMenu.querySelectorAll("a");
+let hideTimeout;
+
+function updateMenuDisplay() {
+    if (window.innerWidth > 768) {
+        desktopMenu.classList.remove("hidden");
+        mobileMenu.classList.add("hidden");
+        menuBtn.classList.add("hidden");
+    } else {
+        desktopMenu.classList.add("hidden");
+        menuBtn.classList.remove("hidden");
+    }
+}
+
+function showMobileMenu() {
+    mobileMenu.classList.toggle("hidden");
+    resetHideTimeout();
+}
+
+function resetHideTimeout() {
+    clearTimeout(hideTimeout);
+    if (!mobileMenu.classList.contains("hidden")) {
+        hideTimeout = setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+        }, 3000);
+    }
+}
+
+menuBtn.addEventListener("click", showMobileMenu);
+mobileMenu.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+mobileMenu.addEventListener("mouseleave", resetHideTimeout);
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+    });
+});
+
+window.addEventListener("resize", updateMenuDisplay);
+document.addEventListener("DOMContentLoaded", updateMenuDisplay);
+</script>
+
+<section id="Amenities" class="py-24 bg-[#D4ECDD] text-white flex flex-col justify-between min-h-screen">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-5xl font-bold text-center mb-12 drop-shadow-lg text-[#50311f]">Our Amenities</h2><br>
+
+
+    <!-- Amenities Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+        <span class="text-6xl">🏊</span>
+        <h3 class="text-3xl font-semibold mt-4">Infinity Pool</h3>
+        <p class="text-gray-600 mt-2">Enjoy a breathtaking view while taking a relaxing swim.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+        <span class="text-6xl">🍽️</span>
+        <h3 class="text-3xl font-semibold mt-4">Fine Dining</h3>
+        <p class="text-gray-600 mt-2">Savor delicious meals crafted by our expert chefs.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+        <span class="text-6xl">🏋️</span>
+        <h3 class="text-3xl font-semibold mt-4">Fitness Center</h3>
+        <p class="text-gray-600 mt-2">Stay active with state-of-the-art gym equipment.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+        <span class="text-6xl">🌿</span>
+        <h3 class="text-3xl font-semibold mt-4">Spa & Wellness</h3>
+        <p class="text-gray-600 mt-2">Indulge in relaxation with our premium spa treatments.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+        <span class="text-6xl">🎉</span>
+        <h3 class="text-3xl font-semibold mt-4">Event Spaces</h3>
+        <p class="text-gray-600 mt-2">Host your special events in our elegant venues.</p>
+      </div>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center">
+        <span class="text-6xl">🏕️</span>
+        <h3 class="text-3xl font-semibold mt-4">Outdoor Adventures</h3>
+        <p class="text-gray-600 mt-2">Explore nature with guided tours and activities.</p>
+      </div>
+    </div>
+
+    <!-- Centered button at the bottom -->
+    <div class="flex justify-center mt-12">
+      <a href="Amenities.html" class="px-8 py-3 text-lg font-semibold border-2 border-[#50311f] text-[#50311f] rounded-full hover:bg-white hover:text-[#A66E38] transition-all duration-300">
+        Learn More
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+
+
+      
+        <section id="Location" class="py-32 text-[#50311f] text-center">
+          <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <!-- Left: Image -->
+            <div class="w-full md:w-1/2 flex justify-center items-center p-8">
+              <img src="assets/Wavy Buddies - Address.png" alt="Location illustration" class="w-96 h-[500px]">
+            </div>
+        
+            <!-- Right: Text content -->
+            <div class="w-full md:w-1/2 text-left p-8">
+              <h2 class="text-6xl font-extrabold mb-6">LOCATION</h2>
+              <p class="text-lg mb-8" style="font-family: 'Playfair Display', serif;">
+                Nestled in the heart of serenity and luxury, our location offers the perfect blend of natural beauty and modern comfort — your ideal escape awaits.
+              </p>
+        
+              <!-- Buttons -->
+              <div class="flex space-x-4">
+                <a href="Location.html" class="px-8 py-3 text-lg font-semibold border-2 border-[#50311f] text-[#50311f] rounded-full hover:bg-[#50311f] hover:text-[#A66E38] transition-all duration-300">
+                  START NOW
+                </a>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        
+        
+      <footer class="bg-[#50311f] text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Column 1: Contact Info -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+                <ul>
+                    <li class="mb-2">Email: contact@yourdomain.com</li>
+                    <li class="mb-2">Phone: +1 (123) 456-7890</li>
+                    <li class="mb-2">Address: 123 Serenity Blvd, Luxury City, State</li>
+                </ul>
+            </div>
+    
+            <!-- Column 2: Social Media Links -->
+            <div>
+              <h3 class="text-2xl font-semibold mb-4">Follow Us</h3>
+              <a href="https://facebook.com" target="_blank" class="social-icon">
+                <i class="fab fa-facebook"></i> 
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i> 
+              </a>
+              <a href="https://instagram.com" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i> 
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin"></i> 
+              </a>
+            </div>
+            
+            <style>
+              .social-icon i {
+                font-size: 2.5rem; /* Increase icon size */
+                margin-right: 15px; /* Add space between icons */
+              }
+            
+              .social-icon {
+                margin-right: 20px; /* Optional, for overall spacing between icons */
+              }
+            </style>
+            
+    
+            <!-- Column 3: About Us -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4">About Us</h3>
+                <p>
+                    We are dedicated to providing the finest service in a serene and luxurious environment. Our space is designed to offer a peaceful retreat with top-tier amenities and unmatched comfort.  
+                </p>
+            </div>
+        </div>
+    
+        <div class="mt-8 text-center text-sm">
+            <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+        </div>
+    </footer>      
+      
+        
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const swiper = new Swiper('.mySwiper', {
+        loop: true, // Infinite loop
+        autoplay: {
+          delay: 3000, // 3 seconds per slide
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        speed: 1000, // Smooth slide transition
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+          const cards = document.querySelectorAll('#Amenities .transform');
+          cards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+              card.classList.add('shadow-2xl');
+            });
+            card.addEventListener('mouseout', () => {
+              card.classList.remove('shadow-2xl');
+            });
+          });
+        });
+  </script>
+  
+
+</html>
